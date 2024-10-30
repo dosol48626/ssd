@@ -1,4 +1,4 @@
-package com.dosol.braincare.service;
+package com.dosol.braincare.service.todoservice;
 
 import com.dosol.braincare.dto.TodoDTO;
 

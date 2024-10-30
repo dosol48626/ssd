@@ -1,7 +1,7 @@
 package com.dosol.braincare.controller;
 
 import com.dosol.braincare.dto.TodoDTO;
-import com.dosol.braincare.service.TodoService;
+import com.dosol.braincare.service.todoservice.TodoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -23,5 +23,4 @@ public class TodoController {
         List<TodoDTO> todos = todoService.getAllTodos();
         model.addAttribute("todos", todos);
     }
-
 }
