@@ -1,6 +1,7 @@
 package com.dosol.braincare.controller;
 
 import com.dosol.braincare.dto.MemberDTO;
+import com.dosol.braincare.dto.TodoDTO;
 import com.dosol.braincare.service.memberservice.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -15,6 +16,5 @@ public class MemberController {
     private final MemberService memberService;
 
     public void registerMember(MemberDTO memberDTO) {
-
     }
 }
