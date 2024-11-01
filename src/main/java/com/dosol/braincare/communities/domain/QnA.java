@@ -1,22 +1,19 @@
-package com.dosol.braincare.domain;
+package com.dosol.braincare.communities.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.annotation.Nullable;
+import com.dosol.braincare.domain.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.LocalDateTime;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Todo {
+@Builder
+public class QnA {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,13 +24,19 @@ public class Todo {
 
     @Lob
     @Column(nullable = false)
-    private String description;
+    private String content;
 
-    private Boolean completed = false;
+    @ColumnDefault("0")
+    private int visitcount;
 
-    @Nullable
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime dueDate;
+    public void updateVisitCount(){
+        this.visitcount++;
+    }
+
+    public void change(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
 
     @ManyToOne
     private Member member;

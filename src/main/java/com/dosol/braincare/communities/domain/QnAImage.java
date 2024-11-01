@@ -1,6 +1,6 @@
-package com.dosol.braincare.dto;
+package com.dosol.braincare.communities.domain;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,20 +9,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class MemberDTO {
+public class QnAImage {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long num;
-
-    private String userName;
-
-    private String password;
-
-    private String email;
-
-    private String role;
-
 }
